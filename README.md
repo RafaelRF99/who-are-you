@@ -1,4 +1,4 @@
-# HowAreYou
+# WhoAreYou
 
 Feito em Angular 15.
 Desenvolvido durante o curso da DIO 2023.
