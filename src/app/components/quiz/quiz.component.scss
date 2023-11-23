@@ -1,7 +1,6 @@
 .quiz {
   width: 80%;
   margin: 20px auto;
-  border: 1px solid #000;
 
   display: flex;
   flex-direction: column;
@@ -10,44 +9,48 @@
   text-align: center;
 
   padding: 1rem;
-  gap: 1rem;
 
-  .title {
-    margin: 0.5rem 0;
-
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .questions {
-    width: 100%;
-
-    background-color: #644ed2;
-
-    border: 1px solid #f1f1f1;
-    border-radius: 7px;
-    padding: 25px 0;
-  }
-
-  .options {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+  div {
     gap: 1rem;
+    .title {
+      margin: 0.5rem 0;
 
-    button {
-      width: 45%;
-      min-height: 40px;
-      height: 100%;
-      min-width: 200px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
 
-      padding: 5px;
+    .questions {
+      width: 100%;
 
-      &:active {
-        position: relative;
-        top: 1px;
+      margin: 1rem 0;
+
+      background-color: #644ed2;
+
+      border: 1px solid #f1f1f1;
+      border-radius: 7px;
+      padding: 25px 0;
+    }
+
+    .options {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 1rem;
+
+      button {
+        width: 45%;
+        min-height: 40px;
+        height: 100%;
+        min-width: 200px;
+
+        padding: 5px;
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
       }
     }
   }
@@ -65,5 +68,17 @@
 
     padding: 1rem;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 565px) {
+  .quiz {
+    div {
+      .options {
+        button {
+          width: 100%;
+        }
+      }
+    }
   }
 }

@@ -1,13 +1,22 @@
 <div class="quiz">
-  <h1 class="title">Who Are You?</h1>
-  <div class="questions mat-elevation-z4">
-    <div>Quem é você?</div>
+  <div *ngIf="!finished">
+    <h1 class="title">{{ title }}</h1>
+    <div class="questions mat-elevation-z4">
+      <div>{{ questionSelected.question }}</div>
+    </div>
+    <div class="options">
+      <button
+        mat-raised-button
+        *ngFor="let option of questionSelected.options"
+        (click)="playerChoose(option.alias)"
+      >
+        {{ option.name }}
+      </button>
+    </div>
   </div>
-  <div class="options">
-    <button mat-raised-button>resposta</button>
-  </div>
-  <div class="results">
+  <div class="results" *ngIf="finished">
     <h1>O seu resultado é:</h1>
-    <p>Resposta Selecionada</p>
+    <p>{{ results }}</p>
+    <button mat-raised-button (click)="reset()">Tentar novamente...</button>
   </div>
 </div>
